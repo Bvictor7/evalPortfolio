@@ -1,0 +1,77 @@
+/* Arrière-plan de la page Register */
+.register-page {
+    background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif") no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+/* Conteneur du formulaire */
+.register-container {
+    max-width: 400px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Champs du formulaire */
+.register-form .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.register-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.register-form input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(244, 162, 97, 0.5);
+}
+
+/* Effet de survol avec animation */
+.register-button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Effet au survol */
+.register-button:hover {
+    background-color: grey;
+    transform: scale(1.05); /* Légère élévation */
+    box-shadow: 0 4px 10px red; /* Ombre animée */
+}
+
+/* Effet de pulsation continue */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.07); }
+    100% { transform: scale(1); }
+}
+
+.register-button:hover {
+    animation: pulse 0.5s ease-in-out;
+}
