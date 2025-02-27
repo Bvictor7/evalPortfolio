@@ -1,48 +1,51 @@
-/* Style du conteneur principal */
-.contact-container {
-    background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif") no-repeat center center fixed;
+/* Container principal couvrant toute la page avec l'image de fond */
+.contact-page {
+    background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif")
+      no-repeat center center;
     background-size: cover;
     min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-}
-
-/* Style du formulaire */
-form {
+  }
+  
+  /* Conteneur du formulaire */
+  .contact-container {
     background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
     padding: 30px;
     border-radius: 10px;
-    max-width: 400px;
-    width: 100%;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-}
-
-/* Titre */
-h2 {
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* Style des champs de formulaire */
-input, textarea {
+    margin: 0 auto;
+  }
+  
+  /* Formulaire et ses éléments */
+  form {
+    text-align: center;
+  }
+  
+  input,
+  textarea {
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-}
-
-textarea {
+  }
+  
+  textarea {
     resize: none;
     height: 100px;
-}
-
-/* Style du bouton */
-button {
+  }
+  
+  button {
     width: 100%;
     padding: 12px;
     background-color: red;
@@ -52,24 +55,24 @@ button {
     color: white;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
-}
-
-/* Effet de survol sur le bouton */
-button:hover {
+  }
+  
+  button:hover {
     transform: scale(1.05);
     background-color: #ff4c4c;
-}
-
-/* Message de succès */
-.success {
+  }
+  
+  /* Messages */
+  .success {
     color: #4caf50;
     margin-top: 15px;
     font-weight: bold;
-}
-
-/* Message d'erreur */
-.error {
+  }
+  
+  .error {
     color: #ff4c4c;
     margin-top: 15px;
     font-weight: bold;
-}
+  }
+  
+  

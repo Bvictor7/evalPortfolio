@@ -1,29 +1,34 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { VscGrabber, VscClose } from "react-icons/vsc";
+import { VscGrabber } from "react-icons/vsc";
 import { socialprofils } from "../content_option";
-import Themetoggle from "./Themetoggle";
 import "./HeaderMain.css";
 
 const HeaderMain = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-    document.body.classList.toggle("ovhidden", isMenuOpen);
+    setMenuOpen((prev) => {
+      const newState = !prev;
+      if (newState) {
+        document.body.classList.add("ovhidden");
+      } else {
+        document.body.classList.remove("ovhidden");
+      }
+      return newState;
+    });
   };
 
   return (
     <>
       <header className="fixed-top site__header d-flex align-items-center justify-content-between">
-        
         <Link className="navbar-brand nav_ac" to="/">
+          {/* Ton logo ici si besoin */}
         </Link>
 
         <div className="d-flex align-items-center">
-          <Themetoggle />
           <button className="menu__button nav_ac" onClick={toggleMenu}>
-            {isMenuOpen ? <VscClose /> : <VscGrabber />}
+            <VscGrabber />
           </button>
         </div>
       </header>
@@ -61,9 +66,15 @@ const HeaderMain = () => {
 
         <div className="menu_footer d-flex flex-column flex-md-row justify-content-between align-items-md-center position-absolute w-100 p-3">
           <div className="d-flex">
-            <a href={socialprofils.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href={socialprofils.github} target="_blank" rel="noopener noreferrer">Github</a>
-            <a href={socialprofils.twitter} target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href={socialprofils.facebook} target="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
+            <a href={socialprofils.github} target="_blank" rel="noopener noreferrer">
+              Github
+            </a>
+            <a href={socialprofils.twitter} target="_blank" rel="noopener noreferrer">
+              Twitter
+            </a>
           </div>
           <p className="copyright m-0">©Victor</p>
         </div>

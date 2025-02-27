@@ -1,9 +1,9 @@
-/* Ajoute une marge à gauche pour éviter que la navbar ne cache le contenu */
+/* Styles par défaut pour mobile */
 .home-container {
     position: relative;
-    width: calc(100% - 200px); /* Soustrait la largeur de la navbar */
+    width: 100%; /* Pleine largeur sur mobile */
     height: 100vh;
-    margin-left: 200px; /* Décale le contenu pour ne pas être sous la navbar */
+    margin-left: 0; /* Pas de décalage par défaut */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +29,7 @@
 .content {
     position: absolute;
     z-index: 2; /* S'assure que le texte est bien visible */
-    width: 100%;
+    width: 90%; /* Légère marge sur mobile */
     max-width: 900px;
     background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour lisibilité */
     padding: 40px;
@@ -66,4 +66,12 @@ h1, h2, p {
 
 .btn:hover {
     opacity: 0.8;
+}
+
+/* Styles pour écrans larges (à partir de 768px) */
+@media (min-width: 768px) {
+    .home-container {
+        width: calc(100% - 200px); /* Réserve la largeur de la navbar */
+        margin-left: 200px; /* Décale le contenu pour ne pas être sous la navbar */
+    }
 }

@@ -1,16 +1,21 @@
+/* Mobile-first */
 
+/* Fond et mise en page générale de la page dashboard */
 .dashboard-page {
-  padding-top: 80px; 
+  padding-top: 80px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif") no-repeat center center fixed;
+  background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif")
+    no-repeat center center;
   background-size: cover;
   min-height: 100vh;
 }
 
-/* Conteneur du tableau de bord */
+/* Conteneur du tableau de bord centré */
 .dashboard-container {
+  width: 90%;
   max-width: 800px;
   background: rgba(0, 0, 0, 0.8);
   padding: 30px;
@@ -18,10 +23,10 @@
   color: white;
   text-align: center;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  margin-left: 220px; 
+  margin: 20px auto; /* Centrage horizontal et marge vertical */
 }
 
-/* Sections */
+/* Sections internes */
 .dashboard-section {
   margin-bottom: 20px;
   padding: 15px;
@@ -29,10 +34,10 @@
   border-radius: 5px;
 }
 
-/* Statistiques */
+/* Statistiques : grille en colonne sur mobile */
 .dashboard-grid {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 10px;
   margin: 20px 0;
 }
@@ -44,7 +49,7 @@
   flex: 1;
 }
 
-/* Bouton */
+/* Bouton de déconnexion */
 .logout-button {
   background-color: red;
   color: white;
@@ -56,4 +61,19 @@
 
 .logout-button:hover {
   background-color: darkred;
+}
+
+/* Media Query pour écrans larges */
+@media (min-width: 768px) {
+  /* Si tu as une sidebar, on décale le conteneur vers la droite */
+  .dashboard-container {
+    margin-left: 220px;
+    margin-right: 20px; /* Pour garder un peu d'espace à droite */
+  }
+  
+  /* Affichage de la grille en ligne sur desktop */
+  .dashboard-grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

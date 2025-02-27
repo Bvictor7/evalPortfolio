@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
-import HeaderMain from "../components/HeaderMain"; 
+import HeaderMain from "../components/HeaderMain";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +9,6 @@ const Contact = () => {
     email: "",
     message: "",
   });
-
   const [isSent, setIsSent] = useState(false);
   const [error, setError] = useState("");
 
@@ -22,15 +21,12 @@ const Contact = () => {
     setIsSent(false);
     setError("");
 
-    console.log("Form data:", formData);
-    console.log("Form target:", e.target);
-
     emailjs
       .sendForm(
         "service_md73tyk", 
         "template_vvk0qvi",
         e.target,
-        "npMzTF2fsywP0JstX" 
+        "npMzTF2fsywP0JstX"
       )
       .then(
         (result) => {
@@ -49,7 +45,6 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <HeaderMain />
-
       <div className="contact-container">
         <h2>Contactez-nous</h2>
         <form onSubmit={sendEmail}>
@@ -78,7 +73,6 @@ const Contact = () => {
           ></textarea>
           <button type="submit">Envoyer</button>
         </form>
-
         {isSent && <p className="success">Message envoyé avec succès ! ✅</p>}
         {error && <p className="error">{error}</p>}
       </div>

@@ -1,64 +1,71 @@
+/* Mobile-first */
+
 /* Arrière-plan de la page About */
 .about-page {
-    background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif") no-repeat center center fixed;
+    background: url("https://i.pinimg.com/originals/59/1d/b2/591db2e0bb7cbff19cba800da63503c6.gif")
+      no-repeat center center;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh; /* Permet à la section de s'allonger si le contenu dépasse */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
-    margin-left: 200px;
-}
-
-/* Conteneur principal */
-.about-container {
+    margin-left: 0; /* Pas de marge sur mobile */
+    padding-top: 100px;
+    padding-bottom: 100px; /* Ajout d'un padding pour laisser de l'espace en bas */
+  }
+  
+  /* Conteneur principal */
+  .about-container {
+    width: 90%;
     max-width: 700px;
     padding: 30px;
     background: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Image de profil */
-.profile-img {
+  }
+  
+  /* Image de profil */
+  .profile-img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     margin-bottom: 15px;
     border: 3px solid white;
-}
-
-/* Titres */
-.about-header h1 {
+  }
+  
+  /* Titres */
+  .about-header h1 {
     margin-bottom: 10px;
-    font-size: 28px;
-}
-
-.about-section h2 {
-    font-size: 22px;
+    font-size: 24px; /* Taille réduite sur mobile */
+  }
+  
+  .about-section h2 {
+    font-size: 20px;
     margin-bottom: 10px;
-}
-
-/* Compétences */
-.skills-icons img {
+  }
+  
+  /* Compétences */
+  .skills-icons img {
     width: 100%;
     margin-top: 10px;
     filter: drop-shadow(2px 2px 5px rgba(255, 255, 255, 0.3));
-}
-
-/* Expérience & Formation */
-.about-section ul {
+  }
+  
+  /* Expérience & Formation */
+  .about-section ul {
     list-style: none;
     padding: 0;
-}
-
-.about-section ul li {
+  }
+  
+  .about-section ul li {
     margin-bottom: 8px;
-}
-
-/* Bouton Contact */
-.contact-button {
+  }
+  
+  /* Bouton Contact */
+  .contact-button {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
@@ -68,9 +75,24 @@
     border-radius: 5px;
     text-decoration: none;
     transition: transform 0.2s ease-in-out;
-}
-
-.contact-button:hover {
+  }
+  
+  .contact-button:hover {
     transform: scale(1.05);
     background-color: #ff4c4c;
-}
+  }
+  
+  /* Media Query pour écrans larges */
+  @media (min-width: 768px) {
+    .about-page {
+      margin-left: 200px; /* Laisse la place à la sidebar */
+    }
+    .about-header h1 {
+      font-size: 28px;
+    }
+    .about-section h2 {
+      font-size: 22px;
+    }
+  }
+  
+  
